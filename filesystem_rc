@@ -11,8 +11,8 @@ own_window_type dock
 #own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_argb_visual true
-own_window_argb_value 180
-own_window_colour 224466
+own_window_argb_value 80
+#own_window_colour 224466
 double_buffer yes
 minimum_size 225
 draw_shades no
@@ -23,22 +23,27 @@ default_color 101010
 default_shade_color 101010
 default_outline_color green
 alignment top_left
-gap_x 320#40
-gap_y 200#40
+gap_x 1350#40
+gap_y 20#40
 no_buffers yes
-cpu_avg_samples 1
+diskio_avg_samples 1
 uppercase no
 border_inner_margin 15
 
 #colors
-color1 96A0DF
-color2 aaa
-color3 ddd
+color1 4ce0d3
+color2 IndianRed
+color3 fff
 
 TEXT
 ${font Oswald:bold:size=10}${color1}FILESYSTEM ${color2} ${hr 2}
 
-${color3}${font Open Sans:size=9}Root: ${alignr}${fs_used_perc /}%  ${color1}${fs_bar 6, 140 /} 
+${color3}${font Open Sans:size=9}Root: ${alignr}${fs_used_perc /}%  ${color1}${fs_bar 6, 140 /}
 ${color3}${font Open Sans:pixelsize=9}${alignc 49}Size: ${fs_used /} / ${fs_size /}
-${color3}${font Open Sans:size=9}Home: ${alignr}${fs_used_perc /home}%  ${color1}${fs_bar 6, 140 /home} 
+${color3}${font Open Sans:size=9}Home: ${alignr}${fs_used_perc /home}%  ${color1}${fs_bar 6, 140 /home}
 ${color3}${font Open Sans:pixelsize=9}${alignc 49}Size: ${fs_used /home} / ${fs_size /home}
+
+${color3}${font Open Sans:size=9}Read: ${diskio_read sda}
+${color1}${color1}${diskiograph_read sda 20,000 444444 eeeeee}
+${color3}${font Open Sans:size=9}Write: ${diskio_write sda}
+${color1}${color1}${diskiograph_write sda 20,000 444444 eeeeee}
