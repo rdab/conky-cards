@@ -23,8 +23,8 @@ default_color 101010
 default_shade_color 101010
 default_outline_color green
 alignment top_left
-gap_x 1350#40
-gap_y 20#40
+gap_x 1350
+gap_y 50
 no_buffers yes
 diskio_avg_samples 1
 uppercase no
