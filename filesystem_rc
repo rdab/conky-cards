@@ -26,7 +26,7 @@ alignment top_left
 gap_x 1350
 gap_y 50
 no_buffers yes
-diskio_avg_samples 1
+diskio_avg_samples 2
 uppercase no
 border_inner_margin 15
 
@@ -45,7 +45,9 @@ ${color3}${font Open Sans:pixelsize=9}${alignc 49}Size: ${fs_used /home} / ${fs_
 ${color3}${font Open Sans:size=9}Data: ${alignr}${fs_used_perc /mnt/hdd}%  ${color1}${fs_bar 6, 140 /mnt/hdd}
 ${color3}${font Open Sans:pixelsize=9}${alignc 49}Size: ${fs_used /mnt/hdd} / ${fs_size /mnt/hdd}
 
-${color3}${font Open Sans:size=9}Read: ${diskio_read sda}
-${color1}${color1}${diskiograph_read sda 20,000 444444 eeeeee}
-${color3}${font Open Sans:size=9}Write: ${diskio_write sda}
-${color1}${color1}${diskiograph_write sda 20,000 444444 eeeeee}
+${font Oswald:bold:size=10}${color1}SSD: ${color2} ${hr 1}
+${color3}${font Open Sans:size=9}Read: ${diskio_read sda} ${goto 130}${color3}${font Open Sans:size=9}Write: ${diskio_write sda}
+${color1}${color1}${diskiograph_read sda 40,110 02FF21 A40000 -t} ${color1}${color1}${diskiograph_write sda 40,110 02FF21 A40000 -t}
+${font Oswald:bold:size=10}${color1}HDD: ${color2} ${hr 1}
+${color3}${font Open Sans:size=9}Read: ${diskio_read sdb} ${goto 130}${color3}${font Open Sans:size=9}Write: ${diskio_write sdb}
+${color1}${color1}${diskiograph_read sdb 40,110 02FF21 A40000 -t} ${color1}${color1}${diskiograph_write sdb 40,110 02FF21 A40000 -t}
